@@ -6,12 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import excelManager.ExcelReader;
+import excelManager.ExcelWriter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
@@ -28,6 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -40,13 +40,12 @@ public class TestBase {
     public static final Logger log = Logger.getLogger(TestBase.class.getSimpleName());
     public static WebDriver driver ;
     public static WebDriverWait wait ;
-
     public static ExtentReports extent;
     public static ExtentTest Test ;
     public static ITestResult Result ;
     public Properties OR = new Properties();
     public Properties APP = new Properties();
-
+    public static HashMap<Integer,ArrayList<String>> resultMap = new HashMap<Integer,ArrayList<String>>();
 
     static{
         Calendar calendar = Calendar.getInstance();
@@ -69,6 +68,12 @@ public class TestBase {
         String path = System.getProperty("user.dir")+"//src//main//resources//data//" + excelName + ".xlsx" ;
         ExcelReader reader = new ExcelReader(path);
         return reader.getDataFromSheet(excelName, sheetName);
+    }
+
+    public void writeExcel(String excelName,String sheetName,HashMap<Integer, ArrayList<String>> resultMap){
+        String path = System.getProperty("user.dir")+"//Output//" + excelName + ".xlsx" ;
+        ExcelWriter writer = new ExcelWriter(path);
+        writer.createResultSheet(sheetName,resultMap);
     }
 
     /**
@@ -217,27 +222,31 @@ public class TestBase {
 
 
 
-    public void getResult(ITestResult Result) throws IOException{
+    public String getResult(ITestResult Result) throws IOException{
         if(Result.getStatus()==ITestResult.SUCCESS){
             Test.log(Status.PASS,  Result.getName()+" Test is Passed");
             String imagePath = getScreenshot(Result.getName(),"SuccessScreenshots");
             Test.addScreenCaptureFromPath(imagePath, "Passed Test case Screen shot");
+            return "PASSED";
 
         }
         else if(Result.getStatus()==ITestResult.FAILURE){
             Test.log(Status.FAIL, Result.getName()+" Test is Failed");
             String imagePath = getScreenshot(Result.getName(),"FailureScreenshots");
             Test.addScreenCaptureFromPath(imagePath, "Failed Test case Screen shot");
+            return "FAILED";
 
         }
         else if(Result.getStatus()==ITestResult.SKIP){
             Test.log(Status.SKIP,Result.getName()+" Test is Skipped");
+            return "SKIPPED";
         }
         else if(Result.getStatus()==ITestResult.STARTED){
             Test.log(Status.INFO,Result.getName()+" Test is Started");
+            return "STARTED";
         }
+        return "NO RESULT";
     }
-
 
     @BeforeMethod()
     public void beforeMethod(Method Result) throws IOException, InterruptedException{
@@ -248,9 +257,12 @@ public class TestBase {
 
     @AfterMethod()
     public void afterMethod(ITestResult Result) throws IOException{
-        getResult(Result);
+        ArrayList testResult = new ArrayList();
+        testResult.add(resultMap.size()+1);
+        testResult.add(Result.getName());
+        testResult.add(getResult(Result));
+        resultMap.put(resultMap.size()+1,testResult);
         driver.close();
-
     }
 
     @AfterClass(alwaysRun=true)
@@ -260,5 +272,10 @@ public class TestBase {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite(){
+        writeExcel("TestResults","test1",resultMap);
     }
 }

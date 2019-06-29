@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="module1 Suite">
+    <test thread-count="5" name="Test">
+        <classes>
+            <class name="testCaseModules.module1.module1_TC1"/>
+            <class name="testCaseModules.module1.TC2"></class>
+            <class name="testCaseModules.module1.TC3"></class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Gatepass Suite -->

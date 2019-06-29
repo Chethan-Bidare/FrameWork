@@ -45,7 +45,7 @@ public class TestBase {
     public static ITestResult Result ;
     public Properties OR = new Properties();
     public Properties APP = new Properties();
-    public static HashMap<Integer,ArrayList<String>> resultMap = new HashMap<Integer,ArrayList<String>>();
+    public static HashMap<Integer,ArrayList<Object>> resultMap = new HashMap<Integer,ArrayList<Object>>();
 
     static{
         Calendar calendar = Calendar.getInstance();
@@ -70,7 +70,7 @@ public class TestBase {
         return reader.getDataFromSheet(excelName, sheetName);
     }
 
-    public void writeExcel(String excelName,String sheetName,HashMap<Integer, ArrayList<String>> resultMap){
+    public void writeExcel(String excelName,String sheetName,HashMap<Integer, ArrayList<Object>> resultMap){
         String path = System.getProperty("user.dir")+"//Output//" + excelName + ".xlsx" ;
         ExcelWriter writer = new ExcelWriter(path);
         writer.createResultSheet(sheetName,resultMap);
@@ -257,10 +257,14 @@ public class TestBase {
 
     @AfterMethod()
     public void afterMethod(ITestResult Result) throws IOException{
-        ArrayList testResult = new ArrayList();
+        ArrayList<Object> testResult = new ArrayList<Object>();
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YY HH:mm:ss");
         testResult.add(resultMap.size()+1);
         testResult.add(Result.getName());
         testResult.add(getResult(Result));
+        testResult.add(formatter.format(cal.getTime()));
+        testResult.add((Result.getEndMillis()-Result.getStartMillis())/ 1000);
         resultMap.put(resultMap.size()+1,testResult);
         driver.close();
     }

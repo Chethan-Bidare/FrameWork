@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10379" started-at="2019-08-03T10:30:53Z" finished-at="2019-08-03T10:31:03Z">
+  <suite name="Default suite" duration-ms="9297" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10379" started-at="2019-08-03T10:30:53Z" finished-at="2019-08-03T10:31:03Z">
+    <test name="Default test" duration-ms="9297" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:40Z">
       <class name="testCaseModules.module1.module1_TC1">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="beforeMethod" is-config="true" duration-ms="6601" started-at="2019-08-03T10:30:53Z" finished-at="2019-08-03T10:31:00Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="beforeMethod" is-config="true" duration-ms="7024" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="TC1" duration-ms="601" started-at="2019-08-03T10:31:00Z" finished-at="2019-08-03T10:31:00Z">
+        <test-method status="PASS" signature="TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="TC1" duration-ms="1102" started-at="2019-08-03T11:03:38Z" finished-at="2019-08-03T11:03:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC1 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterMethod" is-config="true" duration-ms="2816" started-at="2019-08-03T10:31:00Z" finished-at="2019-08-03T10:31:03Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterMethod" is-config="true" duration-ms="754" started-at="2019-08-03T11:03:39Z" finished-at="2019-08-03T11:03:40Z">
           <params>
             <param index="0">
               <value>
@@ -33,11 +33,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="endTest" is-config="true" duration-ms="334" started-at="2019-08-03T10:31:03Z" finished-at="2019-08-03T10:31:03Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="endTest" is-config="true" duration-ms="396" started-at="2019-08-03T11:03:40Z" finished-at="2019-08-03T11:03:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterSuite" is-config="true" duration-ms="613" started-at="2019-08-03T10:31:04Z" finished-at="2019-08-03T10:31:04Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterSuite" is-config="true" duration-ms="658" started-at="2019-08-03T11:03:40Z" finished-at="2019-08-03T11:03:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

@@ -89,7 +89,6 @@ public class ExcelWriter {
     
     private CellStyle createCellStyle() {
     	XSSFCellStyle cellStyle = workbook.createCellStyle();
-    	Font font = workbook.createFont();
     	cellStyle.setBorderBottom(BorderStyle.MEDIUM);
     	cellStyle.setBorderTop(BorderStyle.MEDIUM);
     	cellStyle.setBorderLeft(BorderStyle.MEDIUM);
@@ -98,6 +97,31 @@ public class ExcelWriter {
     	cellStyle.setAlignment(HorizontalAlignment.LEFT);
     	return cellStyle;
     }
+    
+    private XSSFCellStyle createHyperLinkCell() {
+    	XSSFCellStyle cellStyle = workbook.createCellStyle();
+    	Font font = workbook.createFont();
+    	font.setColor(IndexedColors.BLUE1.getIndex());
+    	font.setItalic(true);
+    	font.setUnderline(Font.U_SINGLE);
+    	cellStyle.setFont(font);
+    	return cellStyle;
+    }
+    
+    private XSSFCellStyle setColorForTestCaseResult(final String result) {
+    	XSSFCellStyle cellStyle = workbook.createCellStyle();
+    	if(result.equalsIgnoreCase("Failed")) {
+    		cellStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+    	}
+    	else if(result.equalsIgnoreCase("Passed")) {
+    		cellStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+    	}
+    	else if(result.equalsIgnoreCase("Skipped")) {
+    		cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+    	}
+    	cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+    	return cellStyle;
+	}
 
     private void writeResults(HashMap<Integer, ArrayList<Object>> resultMap){
         Set<Integer> keySet = resultMap.keySet();
@@ -109,6 +133,10 @@ public class ExcelWriter {
                 XSSFCell cell = row.createCell(j,CellType.STRING);
                 cell.setCellValue(String.valueOf(resultMap.get(testId).get(j)));
                 cell.setCellStyle(createCellStyle());
+                if(j==2) {
+                	cell.setCellStyle(setColorForTestCaseResult(cell.getStringCellValue()));
+                }
+              
                 sheet.autoSizeColumn(j);
             }
         }

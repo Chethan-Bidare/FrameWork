@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -25,8 +26,6 @@ public class ExcelWriter {
     private XSSFWorkbook workbook;
     private FileOutputStream fileOutputStream;
     private XSSFSheet sheet;
-    private XSSFCellStyle cellStyle;
-    private Font font ;
 
 
     public ExcelWriter(final String path)  {
@@ -40,8 +39,6 @@ public class ExcelWriter {
 
     public void createResultSheet(final String sheetName,HashMap<Integer, ArrayList<Object>> resultMap){
         sheet = workbook.createSheet(sheetName);
-        cellStyle = workbook.createCellStyle();
-        font = workbook.createFont();
         createHeaderRow();
         writeResults(resultMap);
         try {
@@ -74,6 +71,8 @@ public class ExcelWriter {
     }
     
     private CellStyle createHeaderCellStyle() {
+    	XSSFCellStyle cellStyle = workbook.createCellStyle();
+    	Font font = workbook.createFont();
     	font.setBold(true);
     	font.setItalic(true);
     	cellStyle.setFont(font);
@@ -89,7 +88,14 @@ public class ExcelWriter {
 	}
     
     private CellStyle createCellStyle() {
-    	
+    	XSSFCellStyle cellStyle = workbook.createCellStyle();
+    	Font font = workbook.createFont();
+    	cellStyle.setBorderBottom(BorderStyle.MEDIUM);
+    	cellStyle.setBorderTop(BorderStyle.MEDIUM);
+    	cellStyle.setBorderLeft(BorderStyle.MEDIUM);
+    	cellStyle.setBorderRight(BorderStyle.MEDIUM);
+    	cellStyle.setWrapText(true);
+    	cellStyle.setAlignment(HorizontalAlignment.LEFT);
     	return cellStyle;
     }
 
@@ -100,7 +106,9 @@ public class ExcelWriter {
             int testId = it.next();
             XSSFRow row = sheet.createRow(i);
             for (int j=0; j<=5; j++){
-                row.createCell(j,CellType.STRING).setCellValue(String.valueOf(resultMap.get(testId).get(j)));
+                XSSFCell cell = row.createCell(j,CellType.STRING);
+                cell.setCellValue(String.valueOf(resultMap.get(testId).get(j)));
+                cell.setCellStyle(createCellStyle());
                 sheet.autoSizeColumn(j);
             }
         }

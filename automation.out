@@ -1,0 +1,80 @@
+2019-08-03 14:09:43 INFO  TestBase:88 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:09:43 INFO  TestBase:108 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:09:47 INFO  TestBase:127 - Browser driver instantiated
+2019-08-03 14:09:51 INFO  TestBase:130 -  Navigated to the url 
+2019-08-03 14:14:20 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:14:20 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:14:24 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:14:26 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:18:04 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:18:04 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:18:08 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:18:11 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:40:20 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:40:20 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:40:24 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:40:27 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:40:59 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:40:59 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:41:03 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:41:05 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:48:41 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:48:41 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:48:45 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:48:48 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:50:00 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:50:00 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:50:04 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:50:07 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 14:53:04 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:53:04 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 14:53:08 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 14:53:11 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:08:17 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:08:17 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:08:21 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:08:24 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:09:19 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:09:19 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:09:23 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:09:26 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:10:34 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:10:34 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:10:38 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:10:41 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:18:17 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:18:17 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:18:21 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:18:24 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:19:22 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:19:22 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:19:25 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:19:28 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:20:09 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:20:09 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:20:13 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:20:20 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:22:00 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:22:00 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:22:04 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:22:07 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:23:52 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:23:52 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:23:56 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:23:59 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:28:02 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:28:02 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:28:06 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:28:09 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:34:12 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:34:12 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:34:16 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:34:20 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:44:17 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:44:17 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:44:21 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:44:25 INFO  TestBase:132 -  Navigated to the url 
+2019-08-03 15:49:08 INFO  TestBase:90 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:49:08 INFO  TestBase:110 - Property file successfully loaded from the path : D:\workspace\FW//src//main//resources//config//
+2019-08-03 15:49:12 INFO  TestBase:129 - Browser driver instantiated
+2019-08-03 15:49:15 INFO  TestBase:132 -  Navigated to the url 

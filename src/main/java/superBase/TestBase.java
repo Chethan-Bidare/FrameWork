@@ -71,6 +71,8 @@ public class TestBase {
     }
 
     public void writeExcel(String excelName,String sheetName,HashMap<Integer, ArrayList<Object>> resultMap){
+    	File dirPath = new File(System.getProperty("user.dir")+"//Output//");
+    	dirPath.mkdirs();
         String path = System.getProperty("user.dir")+"//Output//" + excelName + ".xlsx" ;
         ExcelWriter writer = new ExcelWriter(path);
         writer.createResultSheet(sheetName,resultMap);
@@ -189,6 +191,8 @@ public class TestBase {
 
         try {
             File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            File file = new File(System.getProperty("user.dir")+"//Output//" + packageFolder);
+            file.mkdirs();
             String ReportDirectory = System.getProperty("user.dir")+"//Output//" + packageFolder + "//";
             String destination = ReportDirectory + methodName+"_"+formatter.format(calendar.getTime())+".png";
             File destFile = new File(destination);
@@ -265,6 +269,7 @@ public class TestBase {
         testResult.add(getResult(Result));
         testResult.add(formatter.format(cal.getTime()));
         testResult.add((Result.getEndMillis()-Result.getStartMillis())/ 1000);
+        testResult.add("Dummy comment. Need to set Pre requisite or return data");
         resultMap.put(resultMap.size()+1,testResult);
         driver.close();
     }

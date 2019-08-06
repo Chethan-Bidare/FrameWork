@@ -16,6 +16,6 @@ public class Page1 extends SeleniumUtils {
     }
 
     public void clickOnSignUp(){
-        click(SignUp);
+        clickAndWait(SignUp);
     }
 }

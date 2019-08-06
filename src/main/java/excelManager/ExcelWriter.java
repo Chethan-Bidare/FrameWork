@@ -1,11 +1,15 @@
 package excelManager;
 
+import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -36,6 +40,7 @@ public class ExcelWriter {
             e.printStackTrace();
         }
     }
+    
 
     public void createResultSheet(final String sheetName,HashMap<Integer, ArrayList<Object>> resultMap){
         sheet = workbook.createSheet(sheetName);
@@ -98,14 +103,19 @@ public class ExcelWriter {
     	return cellStyle;
     }
     
-    private XSSFCellStyle createHyperLinkCell() {
+    private Cell createHyperLinkCell(Cell cell) {
     	XSSFCellStyle cellStyle = workbook.createCellStyle();
     	Font font = workbook.createFont();
     	font.setColor(IndexedColors.BLUE1.getIndex());
     	font.setItalic(true);
     	font.setUnderline(Font.U_SINGLE);
     	cellStyle.setFont(font);
-    	return cellStyle;
+    	CreationHelper creationHelper = workbook.getCreationHelper();
+    	Hyperlink link = creationHelper.createHyperlink(HyperlinkType.FILE);
+    	link.setAddress("chethan");
+    	cell.setHyperlink(link);
+    	cell.setCellStyle(cellStyle);
+    	return cell ;
     }
     
     private XSSFCellStyle setColorForTestCaseResult(final String result) {
@@ -131,12 +141,15 @@ public class ExcelWriter {
             XSSFRow row = sheet.createRow(i);
             for (int j=0; j<=5; j++){
                 XSSFCell cell = row.createCell(j,CellType.STRING);
-                cell.setCellValue(String.valueOf(resultMap.get(testId).get(j)));
+                
+                cell.setCellValue(String.valueOf(resultMap.get(testId).get(j)));               
                 cell.setCellStyle(createCellStyle());
+				
+				  if(j==1) { createHyperLinkCell(cell); }
+				 
                 if(j==2) {
                 	cell.setCellStyle(setColorForTestCaseResult(cell.getStringCellValue()));
-                }
-              
+                }	
                 sheet.autoSizeColumn(j);
             }
         }

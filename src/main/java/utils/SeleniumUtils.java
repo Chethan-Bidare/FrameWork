@@ -5,7 +5,8 @@ import superBase.TestBase;
 
 public class SeleniumUtils extends TestBase {
 
-    public void click(WebElement webElement){
+    public void clickAndWait(WebElement webElement){
         webElement.click();
+        captureScreenshotRuntime();
     }
 }

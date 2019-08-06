@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="5" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9297" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:40Z">
+  <suite name="Suite" duration-ms="0" started-at="2019-08-06T10:18:36Z" finished-at="2019-08-06T10:18:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9297" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:40Z">
+  </suite> <!-- Suite -->
+  <suite name="module1 Suite" duration-ms="26939" started-at="2019-08-06T10:18:08Z" finished-at="2019-08-06T10:18:35Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="26939" started-at="2019-08-06T10:18:08Z" finished-at="2019-08-06T10:18:35Z">
+      <class name="testCaseModules.module1.TC3">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.TC3@103f852]" name="beforeMethod" is-config="true" duration-ms="4664" started-at="2019-08-06T10:18:28Z" finished-at="2019-08-06T10:18:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testCaseModules.module1.TC3.TC3()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC3()[pri:0, instance:testCaseModules.module1.TC3@103f852]" name="TC3" duration-ms="1076" started-at="2019-08-06T10:18:33Z" finished-at="2019-08-06T10:18:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC3 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.TC3@103f852]" name="afterMethod" is-config="true" duration-ms="815" started-at="2019-08-06T10:18:34Z" finished-at="2019-08-06T10:18:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC3 status=SUCCESS method=TC3.TC3()[pri:0, instance:testCaseModules.module1.TC3@103f852] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.TC3@103f852]" name="endTest" is-config="true" duration-ms="103" started-at="2019-08-06T10:18:35Z" finished-at="2019-08-06T10:18:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- testCaseModules.module1.TC3 -->
+      <class name="testCaseModules.module1.TC2">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.TC2@1f021e6c]" name="beforeMethod" is-config="true" duration-ms="4631" started-at="2019-08-06T10:18:19Z" finished-at="2019-08-06T10:18:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testCaseModules.module1.TC2.TC2()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC2()[pri:0, instance:testCaseModules.module1.TC2@1f021e6c]" name="TC2" duration-ms="1737" started-at="2019-08-06T10:18:24Z" finished-at="2019-08-06T10:18:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC2 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.TC2@1f021e6c]" name="afterMethod" is-config="true" duration-ms="2652" started-at="2019-08-06T10:18:26Z" finished-at="2019-08-06T10:18:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC2 status=SUCCESS method=TC2.TC2()[pri:0, instance:testCaseModules.module1.TC2@1f021e6c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.TC2@1f021e6c]" name="endTest" is-config="true" duration-ms="106" started-at="2019-08-06T10:18:28Z" finished-at="2019-08-06T10:18:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- testCaseModules.module1.TC2 -->
       <class name="testCaseModules.module1.module1_TC1">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="beforeMethod" is-config="true" duration-ms="7024" started-at="2019-08-03T11:03:31Z" finished-at="2019-08-03T11:03:38Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c]" name="beforeMethod" is-config="true" duration-ms="6882" started-at="2019-08-06T10:18:08Z" finished-at="2019-08-06T10:18:15Z">
           <params>
             <param index="0">
               <value>
@@ -18,30 +86,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="TC1" duration-ms="1102" started-at="2019-08-03T11:03:38Z" finished-at="2019-08-03T11:03:39Z">
+        <test-method status="PASS" signature="TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c]" name="TC1" duration-ms="1280" started-at="2019-08-06T10:18:15Z" finished-at="2019-08-06T10:18:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC1 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterMethod" is-config="true" duration-ms="754" started-at="2019-08-03T11:03:39Z" finished-at="2019-08-03T11:03:40Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c]" name="afterMethod" is-config="true" duration-ms="2637" started-at="2019-08-06T10:18:16Z" finished-at="2019-08-06T10:18:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC1 status=SUCCESS method=module1_TC1.TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659] output={null}]]]>
+                <![CDATA[[TestResult name=TC1 status=SUCCESS method=module1_TC1.TC1()[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="endTest" is-config="true" duration-ms="396" started-at="2019-08-03T11:03:40Z" finished-at="2019-08-03T11:03:40Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c]" name="endTest" is-config="true" duration-ms="336" started-at="2019-08-06T10:18:19Z" finished-at="2019-08-06T10:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCaseModules.module1.module1_TC1@3b94d659]" name="afterSuite" is-config="true" duration-ms="658" started-at="2019-08-03T11:03:40Z" finished-at="2019-08-03T11:03:41Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCaseModules.module1.module1_TC1@35a50a4c]" name="afterSuite" is-config="true" duration-ms="816" started-at="2019-08-06T10:18:35Z" finished-at="2019-08-06T10:18:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- testCaseModules.module1.module1_TC1 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- module1 Suite -->
 </testng-results>

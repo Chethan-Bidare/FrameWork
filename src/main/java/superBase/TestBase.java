@@ -43,6 +43,7 @@ public class TestBase {
     public static ExtentReports extent;
     public static ExtentTest Test ;
     public static ITestResult Result ;
+    public static String testName ;
     public Properties OR = new Properties();
     public Properties APP = new Properties();
     public static HashMap<Integer,ArrayList<Object>> resultMap = new HashMap<Integer,ArrayList<Object>>();
@@ -225,6 +226,33 @@ public class TestBase {
     }
 
 
+    /**
+     *  Takes Screenshot
+     *  @param methodName - Method Name
+     *  @param packageFolder - Package Folder
+     */
+    public String captureScreenshotRuntime(){
+    	
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_YYYY_HH_mm_ss");
+       
+        try {
+            File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            File file = new File(System.getProperty("user.dir")+"//Output//" + testName);
+            file.mkdirs();
+            String ReportDirectory = System.getProperty("user.dir")+"//Output//" + testName + "//";
+            String destination = ReportDirectory + formatter.format(calendar.getTime())+".png";
+            File destFile = new File(destination);
+            FileHandler.copy(srcFile, destFile);
+
+            return destination ;
+        } catch (WebDriverException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null ;
+    }
 
     public String getResult(ITestResult Result) throws IOException{
         if(Result.getStatus()==ITestResult.SUCCESS){
@@ -254,6 +282,7 @@ public class TestBase {
 
     @BeforeMethod()
     public void beforeMethod(Method Result) throws IOException, InterruptedException{
+    	testName = Result.getName().toString();
         Test = extent.createTest(Result.getName());
         Test.log(Status.INFO, Result.getName()+" Test is Started");
         init();

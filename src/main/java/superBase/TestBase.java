@@ -5,12 +5,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import excelManager.ExcelReader;
 import excelManager.ExcelWriter;
+import utils.DateUtils;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
@@ -49,9 +50,8 @@ public class TestBase {
     public static HashMap<Integer,ArrayList<Object>> resultMap = new HashMap<Integer,ArrayList<Object>>();
 
     static{
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_YYYY_HH_mm_ss");
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/src/main/java/Reports/"+formatter.format(calendar.getTime())+".html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/src/main/java/Reports/" 
+    + DateUtils.getDateFullPatternAsString()+ "_" + DateUtils.getTimeAsString() +".html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         log.info("Extent reports initialized");
@@ -135,7 +135,8 @@ public class TestBase {
 
     /**
      *  Selects Browser based on User specified in Property file
-     *  @param browserName - Browser Namb*/
+     *  @param browserName - Browser Name
+     */
     private void selectBrowser(final String browserName){
         if(browserName.equalsIgnoreCase("firefox")){
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
@@ -187,15 +188,12 @@ public class TestBase {
      */
     public String getScreenshot(String methodName, String packageFolder){
 
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_YYYY_HH_mm_ss");
-
         try {
             File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             File file = new File(System.getProperty("user.dir")+"//Output//" + packageFolder);
             file.mkdirs();
             String ReportDirectory = System.getProperty("user.dir")+"//Output//" + packageFolder + "//";
-            String destination = ReportDirectory + methodName+"_"+formatter.format(calendar.getTime())+".png";
+            String destination = ReportDirectory + methodName+"_"+ DateUtils.getDateFullPatternAsString() + "_"+ DateUtils.getTimeAsString() +".png";
             File destFile = new File(destination);
             FileHandler.copy(srcFile, destFile);
 
@@ -232,16 +230,13 @@ public class TestBase {
      *  @param packageFolder - Package Folder
      */
     public String captureScreenshotRuntime(){
-    	
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_YYYY_HH_mm_ss");
        
         try {
             File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             File file = new File(System.getProperty("user.dir")+"//Output//" + testName);
             file.mkdirs();
             String ReportDirectory = System.getProperty("user.dir")+"//Output//" + testName + "//";
-            String destination = ReportDirectory + formatter.format(calendar.getTime())+".png";
+            String destination = ReportDirectory + DateUtils.getDateFullPatternAsString()+ "_"+ DateUtils.getTimeAsString()+".png";
             File destFile = new File(destination);
             FileHandler.copy(srcFile, destFile);
 
@@ -291,12 +286,10 @@ public class TestBase {
     @AfterMethod()
     public void afterMethod(ITestResult Result) throws IOException{
         ArrayList<Object> testResult = new ArrayList<Object>();
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YY HH:mm:ss");
         testResult.add(resultMap.size()+1);
         testResult.add(Result.getName());
         testResult.add(getResult(Result));
-        testResult.add(formatter.format(cal.getTime()));
+        testResult.add(DateUtils.getDateFullPatternAsString());
         testResult.add((Result.getEndMillis()-Result.getStartMillis())/ 1000);
         testResult.add("Dummy comment. Need to set Pre requisite or return data");
         resultMap.put(resultMap.size()+1,testResult);
